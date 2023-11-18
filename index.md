@@ -1,1 +1,288 @@
-YES
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brober - Social Media & Projects</title>
+  <style>
+    /* width */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 5px rgba(128, 128, 128, 0);
+      border-radius: 10px;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.116);
+      border-radius: 10px;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: #ffffff;
+      margin: 0;
+      padding: 20px;
+    }
+    header {
+      margin: -1%;
+      text-align: center;
+      position: relative;
+      margin-bottom: 40px;
+    }
+    #banner {
+    width: 100%;
+    position: relative;
+    margin-top: -20px;
+    z-index: 0;
+    overflow: hidden; /* Ensure the gradient mask is applied */
+  }
+
+  .banner-mask {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%; /* Adjust the height of the dissolve effect */
+    background: linear-gradient(rgba(18, 18, 18, 0), rgba(18, 18, 18, 1)); /* Adjust the colors and transparency */
+    pointer-events: none; /* Allow interactions with elements behind the mask */
+  }
+    nav {
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    width: 85%; /* Adjust the width of the navigation */
+  }
+
+  nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 50px;
+    padding: 10px 60px; /* Adjust the padding for bigger tabs */
+    border-radius: 8px;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease-in-out;
+    margin: 0 20px; /* Increase the spacing between tabs */
+  }
+    nav a:hover {
+      border-color: #ffffff;
+    }
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    section {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    section img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      display: block;
+      margin: 0 auto;
+    }
+    .project-text {
+      background-color: #1f1f1f;
+      padding: 10px;
+      border-radius: 8px;
+      font-family: 'Courier New', monospace;
+      white-space: pre-wrap;
+      overflow: hidden;
+      display: inline-block;
+    }
+    .project-text p {
+      font-size: 24px;
+      margin: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 3s steps(40, end);
+    }
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+    }
+    .typing-animation::after {
+      content: "|";
+      display: inline-block;
+      width: 0;
+      animation: blink 0.7s infinite;
+    }
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+    .social-links {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .social-links a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 36px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: 2px solid transparent;
+      transition: border-color 0.3s ease-in-out;
+    }
+    .social-links a:hover {
+      border-color: #ffffff;
+    }
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 10px 0;
+    }
+    .banner-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 1;
+    }
+
+    .banner-content h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .banner-content p {
+      font-size: 24px;
+      margin: 0;
+    }
+
+    /* Adjusted styles for the about section */
+    #about {
+      position: absolute;
+      top: -50%;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      width: 100%; /* Adjust the width of the section */
+      background: rgba(0, 0, 0, 0.4); /* Adjust the background color and opacity */
+      padding: 20px;
+      border-radius: 8px;
+      z-index: 1;
+    }
+
+    #about h2 {
+      font-size: 60px;
+      margin: 0px;
+    }
+
+    #about p {
+      font-size: 40px;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#about">About Me</a>
+    <a href="#project">Current Project</a>
+    <a href="#social">Social Media</a>
+  </nav>
+
+  <header>
+    <img id="banner" src="https://c10.patreonusercontent.com/4/patreon-media/p/campaign/5581418/716b48b03e6a4afab4a954e1f8b60e4c/eyJ3IjoxOTIwLCJ3ZSI6MX0%3D/6.png?token-time=1701648000&token-hash=OzrlVikoNAqhIVZ1oJEk_O-78Le1i9Dkba5RSVpxETk%3D" alt="Brober Banner">
+    <div class="banner-mask"></div>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Hi there, hello! I'm Brober and I play games and make games.</p>
+    </section>
+
+    <section id="project">
+      <h2>My Current Project</h2>
+      <img src="https://dostawka.com.pl/wp-content/uploads/2017/08/no-image.png" alt="Project Screenshot" width="400">
+      <div class="project-text">
+        <p class="typing-animation" style="font-size: 24px; white-space: nowrap; overflow: hidden;"></p>
+      </div>
+    </section>
+
+    <section id="social" class="social-links">
+      <h2>Social Media</h2>
+      <a href="https://twitter.com/@Brob3r" target="_blank">Twitter</a>
+      <a href="https://www.youtube.com/@Brob3r" target="_blank">YouTube</a>
+      <a href="https://discord.gg/5faHF24x2a" target="_blank">Discord</a>
+      <a href="https://www.twitch.tv/@Brob3r" target="_blank">Twitch</a>
+      <a href="https://www.patreon.com/brober" target="_blank">Patreon</a>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2023 Brober
+  </footer>
+
+  <script>
+    const texts = [
+      "Programming the weapon sway...",
+      "Thinking...",
+      "Programming the weapon bobbing...",
+      "Getting errors...",
+      "Banging my head against a wall...",
+      "Googling the anwsers to my errors...",
+      "Procrastinating...",
+      // Add more project texts as needed
+    ];
+    let textIndex = 0;
+    let textAnimated = false;
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !textAnimated) {
+          typeWriter();
+          textAnimated = true;
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 1 }); // Change threshold value to adjust when to trigger the animation
+
+    observer.observe(document.querySelector('.project-text'));
+
+    function typeWriter() {
+      if (textIndex < texts.length) {
+        document.querySelector('.project-text').style.visibility = 'visible';
+        animateText(texts[textIndex]);
+      }
+    }
+
+    function animateText(text) {
+      let i = 0;
+      const typingInterval = setInterval(() => {
+        if (i < text.length) {
+          document.querySelector('.typing-animation').innerHTML += text.charAt(i);
+          i++;
+        } else {
+          clearInterval(typingInterval);
+          setTimeout(() => {
+            document.querySelector('.typing-animation').innerHTML = ''; // Clear text after animation
+            textIndex = (textIndex + 1) % texts.length; // Move to the next text
+            typeWriter(); // Start animating the next text
+          }, 2000); // Time to wait before starting the next animation (2 seconds in this example)
+        }
+      }, 50); // Fixed typing speed for all texts (adjust this value)
+    }
+  </script>
+</body>
+</html>
