@@ -183,16 +183,52 @@
       margin: 0;
     }
 
-    .project-image {
-      flex: 0 0 auto; /* Prevent image from flex shrinking */
-      margin-right: 20px; /* Adjust spacing between the image and description */
-    }
-
     .project-image img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
+    max-width: 100%;
+    height: auto;
+    border-radius: 40px; /* Adjust the border-radius for rounded square */
+  }
+
+    .project-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .project-image button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 10px; /* Adjust border-radius for square buttons */
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .project-image button:hover {
+    background-color: #555;
+  }
+
+  .project-image button img {
+    width: 20px;
+  }
+
+  .prev-btn {
+    position: absolute;
+    left: 10px;
+  }
+
+  .next-btn {
+    position: absolute;
+    right: 10px;
+  }
+
     @keyframes typing {
       from {
         width: 0;
@@ -257,6 +293,13 @@
       margin-top: 40px;
       padding: 10px 0;
     }
+    #about,
+  .project-text,
+  .project-info {
+    border-radius: 40px; /* Adjust border-radius for rounded backgrounds */
+    overflow: hidden;
+    padding: 20px;
+  }
   </style>
   <link rel="icon" href="https://yt3.googleusercontent.com/DAV7frMrRdS-SbyGxaM7Vie0xGaFT-7xWXoc-2e8ZF5FbOyR7as7C92mBWzaeIr_LZXTyY3v5A=s176-c-k-c0x00ffffff-no-rj" type="image/png">
 </head>
@@ -277,18 +320,20 @@
       <h2>About Me</h2>
       <p>Hi there, hello! I'm Brober and I play games and make games.</p>
     </section>
-  
+
     <section id="project">
       <h2>My Current Project</h2>
       <div class="project-details">
         <div class="project-info">
           <h3>Interaction Engine</h3>
           <div class="project-description">
-            <p>A Unity project that I can use for any 3d game.</p>
+            <p>A Unity project that I can use for any 3D game.</p>
           </div>
         </div>
         <div class="project-image">
-          <img src="https://dostawka.com.pl/wp-content/uploads/2017/08/no-image.png" alt="Project Screenshot" width="400">
+          <button class="prev-btn" onclick="prevImage()">◀</button>
+          <img id="projectImage" src="projectSS1.png" alt="Project Screenshot" width="400">
+          <button class="next-btn" onclick="nextImage()">▶</button>
         </div>
       </div>
       <div class="project-text">
@@ -327,6 +372,27 @@
   </footer>
 
   <script>
+  let currentImageIndex = 0;
+  const projectImages = [
+    'projectSS1.png',
+    'projectSS2.png', // Add more image URLs here
+    'projectSS3.png',
+  ];
+
+  function updateImage() {
+    const projectImage = document.getElementById('projectImage');
+    projectImage.src = projectImages[currentImageIndex];
+  }
+
+  function nextImage() {
+    currentImageIndex = (currentImageIndex + 1) % projectImages.length;
+    updateImage();
+  }
+
+  function prevImage() {
+    currentImageIndex = (currentImageIndex - 1 + projectImages.length) % projectImages.length;
+    updateImage();
+  }
 
     const texts = [
       "Programming the weapon sway...",
