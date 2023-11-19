@@ -79,8 +79,8 @@
       border-color: #ffffff;
     }
     main {
-      max-width: 800px;
-      margin: 0 auto;
+      max-width: 1220px; /* Increase the max-width for the body */
+      margin: 0 auto; /* Center the content */
       position: relative;
       z-index: 1;
     }
@@ -95,60 +95,6 @@
       margin-bottom: 20px;
       display: block;
       margin: 0 auto;
-    }
-    .project-text {
-      background-color: #1f1f1f;
-      padding: 10px;
-      border-radius: 8px;
-      font-family: 'Courier New', monospace;
-      white-space: pre-wrap;
-      overflow: hidden;
-      display: inline-block;
-    }
-    .project-text p {
-      font-size: 24px;
-      margin: 0;
-      white-space: nowrap;
-      overflow: hidden;
-      animation: typing 3s steps(40, end);
-    }
-    @keyframes typing {
-      from {
-        width: 0;
-      }
-    }
-    .typing-animation::after {
-      content: "|";
-      display: inline-block;
-      width: 0;
-      animation: blink 0.7s infinite;
-    }
-    @keyframes blink {
-      50% {
-        opacity: 0;
-      }
-    }
-    .social-links {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    .social-links a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #ffffff;
-      font-size: 36px;
-      padding: 10px 20px;
-      border-radius: 8px;
-      border: 2px solid transparent;
-      transition: border-color 0.3s ease-in-out;
-    }
-    .social-links a:hover {
-      border-color: #ffffff;
-    }
-    footer {
-      text-align: center;
-      margin-top: 40px;
-      padding: 10px 0;
     }
     .banner-content {
       position: absolute;
@@ -192,6 +138,125 @@
       font-size: 40px;
       margin: 0;
     }
+    
+    #project h2 {
+      font-size: 60px;
+      margin: 0px;
+    }
+    .project-text {
+      background-color: #1f1f1f;
+      padding: 10px;
+      border-radius: 8px;
+      font-family: 'Courier New', monospace;
+      white-space: pre-wrap;
+      overflow: hidden;
+      display: inline-block;
+    }
+    .project-text p {
+      font-size: 24px;
+      margin: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 3s steps(40, end);
+    }
+    .project-details {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-bottom: 20px; /* Adjust spacing between the image and description */
+    }
+
+    .project-info {
+      flex: 1 1 auto; /* Allow the info area to expand */
+      background-color: #2f2f2f; /* Lighter gray background */
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .project-info h3 {
+      font-size: 40px;
+      margin-top: 0;
+    }
+
+    .project-description p {
+      font-size: 30px;
+      margin: 0;
+    }
+
+    .project-image {
+      flex: 0 0 auto; /* Prevent image from flex shrinking */
+      margin-right: 20px; /* Adjust spacing between the image and description */
+    }
+
+    .project-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+    }
+    .typing-animation::after {
+      content: "|";
+      display: inline-block;
+      width: 0;
+      animation: blink 0.7s infinite;
+    }
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+    #social h2 {
+      font-size: 60px;
+      margin: 0px;
+    }
+    .social-links {
+      text-align: center;
+      margin-bottom: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .social-links h2 {
+      font-size: 60px;
+      margin: 0;
+      width: 100%;
+    }
+
+    .social-links a {
+      margin: 0px 0px;
+      text-decoration: none;
+      color: #ffffff;
+      font-size: 36px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: 2px solid transparent;
+      transition: border-color 0.3s ease-in-out;
+      display: flex;
+      align-items: center;
+      /* flex: 1 0 calc(20% - 20px); Adjust width for 5 links */
+      max-width: 250px; /* Limit maximum width */
+    }
+
+    .social-links a:hover {
+      border-color: #ffffff;
+    }
+
+    .social-links img {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 10px 0;
+    }
   </style>
 </head>
 <body>
@@ -211,22 +276,48 @@
       <h2>About Me</h2>
       <p>Hi there, hello! I'm Brober and I play games and make games.</p>
     </section>
-
+  
     <section id="project">
       <h2>My Current Project</h2>
-      <img src="https://dostawka.com.pl/wp-content/uploads/2017/08/no-image.png" alt="Project Screenshot" width="400">
+      <div class="project-details">
+        <div class="project-info">
+          <h3>Interaction Engine</h3>
+          <div class="project-description">
+            <p>A Unity project that I can use for any 3d game.</p>
+          </div>
+        </div>
+        <div class="project-image">
+          <img src="https://dostawka.com.pl/wp-content/uploads/2017/08/no-image.png" alt="Project Screenshot" width="400">
+        </div>
+      </div>
       <div class="project-text">
         <p class="typing-animation" style="font-size: 24px; white-space: nowrap; overflow: hidden;"></p>
       </div>
     </section>
 
+    
     <section id="social" class="social-links">
       <h2>Social Media</h2>
-      <a href="https://twitter.com/@Brob3r" target="_blank">Twitter</a>
-      <a href="https://www.youtube.com/@Brob3r" target="_blank">YouTube</a>
-      <a href="https://discord.gg/5faHF24x2a" target="_blank">Discord</a>
-      <a href="https://www.twitch.tv/@Brob3r" target="_blank">Twitch</a>
-      <a href="https://www.patreon.com/brober" target="_blank">Patreon</a>
+      <a href="https://twitter.com/@Brob3r" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/124/124021.png" alt="Twitter Icon">
+        Twitter
+      </a>
+      <a href="https://www.youtube.com/@Brob3r" target="_blank">
+        <img src="https://static-00.iconduck.com/assets.00/youtube-icon-2048x2048-gedp2icy.png" alt="YouTube Icon">
+        YouTube
+      </a>
+      <a href="https://discord.gg/5faHF24x2a" target="_blank">
+        <img src="https://static-00.iconduck.com/assets.00/discord-icon-2048x2048-nnt62s2u.png" alt="Discord Icon">
+        Discord
+      </a>
+      <a href="https://www.twitch.tv/@Brob3r" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968819.png" alt="Twitch Icon">
+        Twitch
+      </a>
+      <a href="https://www.patreon.com/brober" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968732.png" alt="Patreon Icon">
+        Patreon
+      </a>
     </section>
   </main>
 
@@ -235,6 +326,7 @@
   </footer>
 
   <script>
+
     const texts = [
       "Programming the weapon sway...",
       "Thinking...",
