@@ -433,7 +433,7 @@
       // Add more project texts as needed
     ];
     
-    let textIndex = 0;
+    let textIndex = Math.floor(Math.random() * texts.length);
     let textAnimated = false;
 
     const observer = new IntersectionObserver(entries => {
